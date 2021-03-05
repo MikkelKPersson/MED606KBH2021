@@ -11,4 +11,4 @@ For it to work to need following measurements
 - measurements from tracker to camera sensor
 - tracker starting position offset meaasurements
 
-To make SteamVR Work without headset follow this guide: http://help.triadsemi.com/en/articles/836917-steamvr-tracking-without-an-hmd
+To make SteamVR work without headset follow this guide: http://help.triadsemi.com/en/articles/836917-steamvr-tracking-without-an-hmd
