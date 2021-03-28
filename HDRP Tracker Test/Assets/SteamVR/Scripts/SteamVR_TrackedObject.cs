@@ -7,10 +7,8 @@
 using UnityEngine;
 using Valve.VR;
 
-
 namespace Valve.VR
 {
-
     public class SteamVR_TrackedObject : MonoBehaviour
     {
         public enum EIndex
@@ -40,9 +38,6 @@ namespace Valve.VR
         [Tooltip("If not set, relative to parent")]
         public Transform origin;
 
-        public Vector3 Position;
-        public Vector3 Rotation;
-
         public bool isValid { get; private set; }
 
         private void OnNewPoses(TrackedDevicePose_t[] poses)
@@ -68,29 +63,15 @@ namespace Valve.VR
 
             if (origin != null)
             {
-                
-                
                 transform.position = origin.transform.TransformPoint(pose.pos);
-                transform.position -= Position;
                 transform.rotation = origin.rotation * pose.rot;
-                transform.eulerAngles += Rotation;
-
-
-
             }
             else
             {
-                
-                
                 transform.localPosition = pose.pos;
-                transform.position -= Position;
                 transform.localRotation = pose.rot;
-                transform.eulerAngles += Rotation;
-
             }
         }
-
-
 
         SteamVR_Events.Action newPosesAction;
 
