@@ -12,6 +12,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: CeilingEmissionMat
+    second: {fileID: 2100000, guid: 388be7b44fcc7e745b05edb011acdd96, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: ConcreteMat
     second: {fileID: 2100000, guid: 7b995cd873d8efb49abf73845846407a, type: 2}
   - first:
@@ -39,6 +44,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: OutdoorEmissionrMat
     second: {fileID: 2100000, guid: 6f520d8f0ec4c314fb27dd581e65ebce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WallEmissionMat
+    second: {fileID: 2100000, guid: 87d63625637f44d4dab3a14bd3428a2b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
