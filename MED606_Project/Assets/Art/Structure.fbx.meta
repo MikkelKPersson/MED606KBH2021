@@ -52,6 +52,21 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: _CageCeilingBrushedMetalMat
+    second: {fileID: 2100000, guid: 87519852f17f1ea4c8318966858a9c81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _CageCeilingMetalGridMat
+    second: {fileID: 2100000, guid: 0e4a67582c1cb5f478e5479ad994bd9a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _CageFloorMetalMetalMat
+    second: {fileID: 2100000, guid: 4f54f9b491da27b41bbaa11bca639ca7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: rp_alison_posed_100k_arnold_rp_alison_posed_material
     second: {fileID: 2100000, guid: 8ba1f0cf3a8d5704d9737b021797e38e, type: 2}
   - first:
