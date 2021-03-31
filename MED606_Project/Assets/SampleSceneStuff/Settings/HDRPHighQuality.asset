@@ -226,7 +226,7 @@ MonoBehaviour:
     customBufferFormat: 12
     supportedLitShaderMode: 2
     planarReflectionResolution:
-      m_Values: 000100000004000000080000
+      m_Values: 000200000004000000080000
       m_SchemaId:
         m_Id: With3Levels
     supportDecals: 1
@@ -256,7 +256,7 @@ MonoBehaviour:
       cookieFormat: 74
       cookieAtlasLastValidMip: 0
       cookieTexArraySize: 16
-      planarReflectionAtlasSize: 2048
+      planarReflectionAtlasSize: 8192
       reflectionProbeCacheSize: 32
       reflectionCubemapSize: 1024
       reflectionCacheCompressed: 1
@@ -271,7 +271,7 @@ MonoBehaviour:
       maxAreaLightsOnScreen: 64
       maxEnvLightsOnScreen: 32
       maxDecalsOnScreen: 512
-      maxPlanarReflectionOnScreen: 32
+      maxPlanarReflectionOnScreen: 16
       maxLightsPerClusterCell: 8
     hdShadowInitParams:
       maxShadowRequests: 128
