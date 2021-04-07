@@ -38,7 +38,8 @@ Material:
   m_Name: _DoorMat
   m_Shader: {fileID: 4800000, guid: 6e4ae4064600d784cac1e41a9e6f2e59, type: 3}
   m_ShaderKeywords: _ALPHATEST_ON _DISABLE_SSR_TRANSPARENT _ENABLE_FOG_ON_TRANSPARENT
-    _MATERIAL_FEATURE_TRANSMISSION _NORMALMAP_TANGENT_SPACE _REFRACTION_PLANE _SURFACE_TYPE_TRANSPARENT
+    _MATERIAL_FEATURE_SUBSURFACE_SCATTERING _MATERIAL_FEATURE_TRANSMISSION _NORMALMAP_TANGENT_SPACE
+    _REFRACTION_PLANE _SURFACE_TYPE_TRANSPARENT
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -49,9 +50,7 @@ Material:
   disabledShaderPasses:
   - MOTIONVECTORS
   - DistortionVectors
-  - TransparentDepthPrepass
   - TransparentDepthPostpass
-  - TransparentBackface
   - RayTracingPrepass
   m_SavedProperties:
     serializedVersion: 3
@@ -200,7 +199,7 @@ Material:
     - _AlbedoAffectEmissive: 0
     - _AlphaCutoff: 0
     - _AlphaCutoffEnable: 1
-    - _AlphaCutoffPostpass: 0.5
+    - _AlphaCutoffPostpass: 0.906
     - _AlphaCutoffPrepass: 0.5
     - _AlphaCutoffShadow: 1
     - _AlphaDstBlend: 10
@@ -271,7 +270,7 @@ Material:
     - _IridescenceThickness: 1
     - _LinkDetailsWithBase: 1
     - _METALNESS: 0
-    - _MaterialID: 5
+    - _MaterialID: 0
     - _Metallic: 0
     - _MetallicRemapMax: 1
     - _MetallicRemapMin: 0
@@ -298,7 +297,7 @@ Material:
     - _SPECULAR_ROTATION: 0
     - _SPECULAR_ROUGHNESS: 0.2
     - _SPECULAR_WEIGHT: 1
-    - _Smoothness: 0.554
+    - _Smoothness: 0.513
     - _SmoothnessRemapMax: 1
     - _SmoothnessRemapMin: 0
     - _SmoothnessTextureChannel: 0
@@ -307,10 +306,10 @@ Material:
     - _SpecularHighlights: 1
     - _SpecularOcclusionMode: 1
     - _SrcBlend: 1
-    - _StencilRef: 0
+    - _StencilRef: 4
     - _StencilRefDepth: 0
     - _StencilRefDistortionVec: 4
-    - _StencilRefGBuffer: 2
+    - _StencilRefGBuffer: 6
     - _StencilRefMV: 32
     - _StencilWriteMask: 6
     - _StencilWriteMaskDepth: 8
@@ -322,15 +321,15 @@ Material:
     - _SurfaceType: 1
     - _TexWorldScale: 1
     - _TexWorldScaleEmissive: 1
-    - _Thickness: 1
+    - _Thickness: 0.111
     - _TransmissionEnable: 1
-    - _TransparentBackfaceEnable: 0
+    - _TransparentBackfaceEnable: 1
     - _TransparentCullMode: 2
     - _TransparentDepthPostpassEnable: 0
-    - _TransparentDepthPrepassEnable: 0
+    - _TransparentDepthPrepassEnable: 1
     - _TransparentSortPriority: 1
     - _TransparentWritingMotionVec: 0
-    - _TransparentZWrite: 0
+    - _TransparentZWrite: 1
     - _UVBase: 0
     - _UVDetail: 0
     - _UVEmissive: 0
@@ -341,7 +340,7 @@ Material:
     - _ZTestGBuffer: 3
     - _ZTestModeDistortion: 4
     - _ZTestTransparent: 4
-    - _ZWrite: 0
+    - _ZWrite: 1
     m_Colors:
     - _BASE_COLOR: {r: 0.62237763, g: 0.62237763, b: 0.62237763, a: 0.62237763}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 0.95686275}

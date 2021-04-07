@@ -27,13 +27,16 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3002
+  m_CustomRenderQueue: 3050
   stringTagMap:
     MotionVector: User
     RenderType: Transparent
   disabledShaderPasses:
   - MOTIONVECTORS
   - DistortionVectors
+  - TransparentDepthPrepass
+  - TransparentDepthPostpass
+  - TransparentBackface
   - RayTracingPrepass
   m_SavedProperties:
     serializedVersion: 3
@@ -306,11 +309,11 @@ Material:
     - _TexWorldScaleEmissive: 1
     - _Thickness: 0.044
     - _TransmissionEnable: 1
-    - _TransparentBackfaceEnable: 1
+    - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2
-    - _TransparentDepthPostpassEnable: 1
-    - _TransparentDepthPrepassEnable: 1
-    - _TransparentSortPriority: 2
+    - _TransparentDepthPostpassEnable: 0
+    - _TransparentDepthPrepassEnable: 0
+    - _TransparentSortPriority: 50
     - _TransparentWritingMotionVec: 0
     - _TransparentZWrite: 1
     - _UVBase: 0
@@ -326,10 +329,10 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BASE_COLOR: {r: 0, g: 0, b: 0, a: 0}
-    - _BaseColor: {r: 0, g: 0, b: 0, a: 0.11764706}
+    - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.011764706}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _COAT_COLOR: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0, g: 0, b: 0, a: 0.11764706}
+    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.011764706}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EMISSION_COLOR: {r: 0, g: 0, b: 0, a: 0}
