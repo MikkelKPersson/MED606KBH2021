@@ -67,6 +67,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: _DirtMat
+    second: {fileID: 2100000, guid: 4ce8eb95a7cca464d894b522fc7e0aea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: _DoorMat
     second: {fileID: 2100000, guid: 11d80699100414246b2b11ccf5327888, type: 2}
   - first:
