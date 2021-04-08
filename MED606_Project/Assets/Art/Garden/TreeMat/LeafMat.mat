@@ -304,7 +304,7 @@ Material:
     - _StencilWriteMaskDistortionVec: 4
     - _StencilWriteMaskGBuffer: 14
     - _StencilWriteMaskMV: 40
-    - _SubsurfaceMask: 0.959
+    - _SubsurfaceMask: 0.979
     - _SupportDecals: 1
     - _SurfaceType: 0
     - _TexWorldScale: 1
