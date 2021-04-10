@@ -156,7 +156,7 @@ MonoBehaviour:
   m_DefaultLookDevProfile: {fileID: 11400000, guid: 254c4fe87beb7be4fa72e1681edbed02, type: 2}
   m_RenderingPathDefaultCameraFrameSettings:
     bitDatas:
-      data1: 140494822702941
+      data1: 140735340871517
       data2: 4539628425463136280
     lodBias: 1
     lodBiasMode: 0
@@ -170,7 +170,7 @@ MonoBehaviour:
     materialQuality: 0
   m_RenderingPathDefaultBakedOrCustomReflectionFrameSettings:
     bitDatas:
-      data1: 139742655312669
+      data1: 139751245247261
       data2: 4539628424389459992
     lodBias: 1
     lodBiasMode: 0
@@ -257,7 +257,7 @@ MonoBehaviour:
       cookieAtlasLastValidMip: 0
       cookieTexArraySize: 16
       planarReflectionAtlasSize: 8192
-      reflectionProbeCacheSize: 32
+      reflectionProbeCacheSize: 12
       reflectionCubemapSize: 1024
       reflectionCacheCompressed: 1
       reflectionProbeFormat: 74
@@ -271,7 +271,7 @@ MonoBehaviour:
       maxAreaLightsOnScreen: 64
       maxEnvLightsOnScreen: 32
       maxDecalsOnScreen: 512
-      maxPlanarReflectionOnScreen: 16
+      maxPlanarReflectionOnScreen: 32
       maxLightsPerClusterCell: 8
     hdShadowInitParams:
       maxShadowRequests: 128
