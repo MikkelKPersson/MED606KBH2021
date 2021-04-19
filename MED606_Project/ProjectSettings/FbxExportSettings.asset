@@ -10,7 +10,7 @@
         "BakeAnimation": false,
         "showConvertToPrefabDialog": true,
         "integrationSavePath": "D:\\Cloud\\Git_Projects\\MED606KBH2021\\MED606_Project",
-        "selectedDCCApp": 1,
+        "selectedDCCApp": 0,
         "prefabSavePaths": [
             "."
         ],
@@ -20,12 +20,10 @@
         "selectedFbxPath": 0,
         "selectedPrefabPath": 0,
         "dccOptionNames": [
-            "3ds Max 2021",
-            "Maya 2020"
+            "Maya 2018"
         ],
         "dccOptionPaths": [
-            "C:/Program Files/Autodesk/3ds Max 2021/3dsmax.exe",
-            "C:/Program Files/Autodesk/Maya2020/bin/maya.exe"
+            "C:/Program Files/Autodesk/Maya2018/bin/maya.exe"
         ],
         "exportModelSettingsSerialize": {
             "exportFormat": 0,

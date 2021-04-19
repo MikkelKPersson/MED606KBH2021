@@ -701,6 +701,7 @@ MonoBehaviour:
   m_Script: {fileID: 1870496116}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Entries: []
 --- !u!4 &128229475
 Transform:
   m_ObjectHideFlags: 19
@@ -744,6 +745,7 @@ MonoBehaviour:
   m_Script: {fileID: 256466057}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Entries: []
 --- !u!4 &163669383
 Transform:
   m_ObjectHideFlags: 19
@@ -1806,7 +1808,7 @@ GameObject:
   m_IsActive: 1
 --- !u!114 &647835424
 MonoBehaviour:
-  m_ObjectHideFlags: 19
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1816,6 +1818,7 @@ MonoBehaviour:
   m_Script: {fileID: 686088284}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Entries: []
 --- !u!4 &647835425
 Transform:
   m_ObjectHideFlags: 19
@@ -5361,6 +5364,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Off-axis_Projection
       objectReference: {fileID: 0}
+    - target: {fileID: 1454009139286335829, guid: e1831f0f1e27014478d7e001ff0cc56d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1454009139286335834, guid: e1831f0f1e27014478d7e001ff0cc56d, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -5441,13 +5448,21 @@ PrefabInstance:
       propertyPath: field of view
       value: 68.49253
       objectReference: {fileID: 0}
+    - target: {fileID: 1454009139399166896, guid: e1831f0f1e27014478d7e001ff0cc56d, type: 3}
+      propertyPath: m_GateFitMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1454009139399166896, guid: e1831f0f1e27014478d7e001ff0cc56d, type: 3}
+      propertyPath: m_projectionMatrixMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1454009139399166898, guid: e1831f0f1e27014478d7e001ff0cc56d, type: 3}
       propertyPath: xrRendering
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1454009139399166898, guid: e1831f0f1e27014478d7e001ff0cc56d, type: 3}
       propertyPath: physicalParameters.m_Iso
-      value: 2500
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 1454009139399166898, guid: e1831f0f1e27014478d7e001ff0cc56d, type: 3}
       propertyPath: physicalParameters.m_ShutterSpeed
@@ -5637,7 +5652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4098560953084681384, guid: 87349e6d0030a48668d8aaebbe664bc2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87349e6d0030a48668d8aaebbe664bc2, type: 3}
