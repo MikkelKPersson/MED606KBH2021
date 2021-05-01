@@ -24,104 +24,104 @@ using UnityEngine;
 
 /// \mainpage
 /// \section Overview
-/// The .NET Visual C# library for the Make Controller Kit is designed 
-/// to make it as simple as possible for developers to integrate the 
-/// Make Controller Kit into their desktop applications, offering the 
-/// transparency that makes open source software so rewarding to work with.  
-/// You can communicate with the Make Controller Kit from your applications 
-/// over either an Ethernet or USB connection, or both.  This library is 
+/// The .NET Visual C# library for the Make Controller Kit is designed
+/// to make it as simple as possible for developers to integrate the
+/// Make Controller Kit into their desktop applications, offering the
+/// transparency that makes open source software so rewarding to work with.
+/// You can communicate with the Make Controller Kit from your applications
+/// over either an Ethernet or USB connection, or both.  This library is
 /// supplied both in source form and built, as MakeControllerOsc.dll
 /// This document is a reference for MakeControllerOsc.
-/// 
+///
 /// \section Communication
-/// Messages to and from the board conform to the OSC (Open Sound Control) protocol.  
-/// OSC is an open, transport-independent standard supported by an increasing 
-/// number of environments and devices. 
-/// 
+/// Messages to and from the board conform to the OSC (Open Sound Control) protocol.
+/// OSC is an open, transport-independent standard supported by an increasing
+/// number of environments and devices.
+///
 /// \subsection OSCmessages OSC Messages
 /// OSC messages are represented by the class OscMessage, and consist of two elements:
-/// - An address string for the device on the board youíre dealing with.
+/// - An address string for the device on the board youï¿½re dealing with.
 /// - A list of value(s) being sent to or from that device. The list of values is optional.
-/// 
+///
 /// From the perspective of OSC addresses, the Make Controller Kit is organized into a hierarchy of two or three layers:
-/// - subsystems ñ classes of device, such as analog inputs, servo controllers, and digital outputs.
-/// - devices ñ the index of a specific device within a subsystem.  
+/// - subsystems ï¿½ classes of device, such as analog inputs, servo controllers, and digital outputs.
+/// - devices ï¿½ the index of a specific device within a subsystem.
 /// If there is only one device in a subsystem, the device is not included in the OSC address.
-/// - properties ñ different devices have different properties, such as the value of an analog input, 
-/// the position of a servo motor, or the state of an LED. 
-/// 
-/// OSC messages always begin with a slash, and use a slash to delimit each element in the address, 
+/// - properties ï¿½ different devices have different properties, such as the value of an analog input,
+/// the position of a servo motor, or the state of an LED.
+///
+/// OSC messages always begin with a slash, and use a slash to delimit each element in the address,
 /// so an example OSC address string would look like:
 /// \code /subsystem/device/property \endcode
-/// 
-/// The second part of an OscMessage is a list of values to be sent to the specified address. 
-/// The OSC types that are used by the Make Controller Kit for these values are integers, 
-/// floats, and strings.  The values in this list are simply separated by spaces, and the 
-/// list can be arbitrarily long.  Most devices on the Make Controller Kit expect only one value.  
-/// For example, to set the position of servo 1, you might send a message which 
+///
+/// The second part of an OscMessage is a list of values to be sent to the specified address.
+/// The OSC types that are used by the Make Controller Kit for these values are integers,
+/// floats, and strings.  The values in this list are simply separated by spaces, and the
+/// list can be arbitrarily long.  Most devices on the Make Controller Kit expect only one value.
+/// For example, to set the position of servo 1, you might send a message which
 /// in string form might look like:
 /// \code /servo/1/position 512 \endcode
-/// 
-/// This addressing scheme allows interactions with the board's various subsystems 
-/// and properties, and most importantly, accommodates the possibility of future or 
-/// custom devices on the board that have not yet been implemented or imagined.  
-/// If somebody creates, for example, a GPS extension to the board, communicating 
-/// with that device from this library is the same as for any other.  More details 
+///
+/// This addressing scheme allows interactions with the board's various subsystems
+/// and properties, and most importantly, accommodates the possibility of future or
+/// custom devices on the board that have not yet been implemented or imagined.
+/// If somebody creates, for example, a GPS extension to the board, communicating
+/// with that device from this library is the same as for any other.  More details
 /// about OSC can be found at http://www.opensoundcontrol.org.
-/// 
+///
 /// \section sendingdata Sending Data
-/// As previously mentioned, the Make Controller Kit can communicate over both 
-/// Ethernet and USB.  Messages are sent as packets, both over USB and UDP, and 
-/// corresponding structures are used ñ UsbPacket and UdpPacket.  Once youíve created 
-/// a packet, you can simply call its Send() method, with the OscMessage youíd like to send.  
-/// There are helper methods to create an OscMessage from a string, or you can pass in the OscMessage itself. 
-/// 
+/// As previously mentioned, the Make Controller Kit can communicate over both
+/// Ethernet and USB.  Messages are sent as packets, both over USB and UDP, and
+/// corresponding structures are used ï¿½ UsbPacket and UdpPacket.  Once youï¿½ve created
+/// a packet, you can simply call its Send() method, with the OscMessage youï¿½d like to send.
+/// There are helper methods to create an OscMessage from a string, or you can pass in the OscMessage itself.
+///
 /// For example, you might set up your UsbSend() routine to look something like:
 /// \code public void usbSend(string text)
 /// {
 ///     OscMessage oscM = OSC.StringToOscMessage(text);
-///     oscUsb is an Osc object, connected to a UsbPacket object 
+///     oscUsb is an Osc object, connected to a UsbPacket object
 ///     oscUsb.Send(oscM);
 /// } \endcode
 /// If your data is already in the form of an OscMessage, you can call oscUsb.Send() directly.
-/// 
+///
 /// \section readingdata Reading Data
-/// The Make Controller Kit must be polled in order to read data from it.  To do this, 
-/// send an OscMessage with the address of the device youíd like to read, but omit 
-/// the list of values.  When the board receives an OscMessage with no value, 
-/// it interprets that as a read request, and sends back an OscMessage with the 
+/// The Make Controller Kit must be polled in order to read data from it.  To do this,
+/// send an OscMessage with the address of the device youï¿½d like to read, but omit
+/// the list of values.  When the board receives an OscMessage with no value,
+/// it interprets that as a read request, and sends back an OscMessage with the
 /// current value at the appropriate address.
-/// 
-/// The .NET Make Controller Kit library conveniently provides handlers that will 
-/// call back a given function when an OscMessage with a given address string is received.  
+///
+/// The .NET Make Controller Kit library conveniently provides handlers that will
+/// call back a given function when an OscMessage with a given address string is received.
 /// Your implementation could look something like:
 /// \code// Set the handler in the constructor for a particular address
 /// MyConstructor()
 /// {
 ///     udpPacket = new UdpPacket();
 ///     oscUdp = new Osc(udpPacket);
-///     // A thread is started when the Osc object is created to read 
+///     // A thread is started when the Osc object is created to read
 ///     // incoming messages.
 ///     oscUdp.SetAddressHandler("/analogin/0/value", Ain0Message);
 /// }
 ///
-/// // The method you specified as the handler will be called back when a 
+/// // The method you specified as the handler will be called back when a
 /// // message with a matching address string comes back from the board.
 /// public void AIn0Message(OscMessage oscMessage)
 /// {
 ///     // write the message to a console, for example
 ///     mct.WriteLine("AIn0 > " + oscMessage.ToString() );
 /// } \endcode
-/// You could alternatively set a handler for all incoming messages by calling 
+/// You could alternatively set a handler for all incoming messages by calling
 /// the SetAllMessageHandler() method in your setup, instead of SetAddressHandler().
-/// 
-/// 
+///
+///
 
 
 /// <summary>
 /// UdpPacket provides packetIO over UDP
 /// </summary>
-public class UDPPacketIO 
+public class UDPPacketIO
 {
 	private UdpClient Sender;
 	private UdpClient Receiver;
@@ -129,17 +129,17 @@ public class UDPPacketIO
 	private string remoteHostName;
 	private int remotePort;
 	private int localPort;
-	
-	
-	
+
+
+
 	public UDPPacketIO(string hostIP, int remotePort, int localPort){
 		RemoteHostName = hostIP;
 		RemotePort = remotePort;
 		LocalPort = localPort;
 		socketsOpen = false;
 	}
-	
-	
+
+
 	~UDPPacketIO()
 	{
 		// latest time for this socket to be closed
@@ -147,12 +147,12 @@ public class UDPPacketIO
 			Debug.Log("closing udpclient listener on port " + localPort);
 			Close();
 		}
-		
+
 	}
-	
+
 	/// <summary>
 	/// Open a UDP socket and create a UDP sender.
-	/// 
+	///
 	/// </summary>
 	/// <returns>True on success, false on failure.</returns>
 	public bool Open()
@@ -161,13 +161,13 @@ public class UDPPacketIO
 		{
 			Sender = new UdpClient();
 			Debug.Log("Opening OSC listener on port " + localPort);
-			
+
 			IPEndPoint listenerIp = new IPEndPoint(IPAddress.Any, localPort);
 			Receiver = new UdpClient(listenerIp);
-			
-			
+
+
 			socketsOpen = true;
-			
+
 			return true;
 		}
 		catch (Exception e)
@@ -175,18 +175,18 @@ public class UDPPacketIO
 			Debug.LogWarning("cannot open udp client interface at port "+localPort);
 			Debug.LogWarning(e);
 		}
-		
+
 		return false;
 	}
-	
+
 	/// <summary>
 	/// Close the socket currently listening, and destroy the UDP sender device.
 	/// </summary>
 	public void Close()
-	{    
+	{
 		if(Sender != null)
 			Sender.Close();
-		
+
 		if (Receiver != null)
 		{
 			Receiver.Close();
@@ -194,14 +194,14 @@ public class UDPPacketIO
 		}
 		Receiver = null;
 		socketsOpen = false;
-		
+
 	}
-	
+
 	public void OnDisable()
 	{
 		Close();
 	}
-	
+
 	/// <summary>
 	/// Query the open state of the UDP socket.
 	/// </summary>
@@ -210,23 +210,23 @@ public class UDPPacketIO
 	{
 		return socketsOpen;
 	}
-	
+
 	/// <summary>
 	/// Send a packet of bytes out via UDP.
 	/// </summary>
 	/// <param name="packet">The packet of bytes to be sent.</param>
 	/// <param name="length">The length of the packet of bytes to be sent.</param>
 	public void SendPacket(byte[] packet, int length)
-	{   
+	{
 		if (!IsOpen())
 			Open();
 		if (!IsOpen())
 			return;
-		
+
 		Sender.Send(packet, length, remoteHostName, remotePort);
 		//Debug.Log("osc message sent to "+remoteHostName+" port "+remotePort+" len="+length);
 	}
-	
+
 	/// <summary>
 	/// Receive a packet of bytes over UDP.
 	/// </summary>
@@ -238,49 +238,49 @@ public class UDPPacketIO
 			Open();
 		if (!IsOpen())
 			return 0;
-		
-		
+
+
 		IPEndPoint iep = new IPEndPoint(IPAddress.Any, localPort);
 		byte[] incoming = Receiver.Receive( ref iep );
 		int count = Math.Min(buffer.Length, incoming.Length);
 		System.Array.Copy(incoming, buffer, count);
 		return count;
-		
-		
+
+
 	}
-	
-	
-	
+
+
+
 	/// <summary>
 	/// The address of the board that you're sending to.
 	/// </summary>
 	public string RemoteHostName
 	{
 		get
-		{ 
-			return remoteHostName; 
+		{
+			return remoteHostName;
 		}
 		set
-		{ 
-			remoteHostName = value; 
+		{
+			remoteHostName = value;
 		}
 	}
-	
+
 	/// <summary>
 	/// The remote port that you're sending to.
 	/// </summary>
 	public int RemotePort
 	{
 		get
-		{ 
-			return remotePort; 
+		{
+			return remotePort;
 		}
 		set
-		{ 
-			remotePort = value; 
+		{
+			remotePort = value;
 		}
 	}
-	
+
 	/// <summary>
 	/// The local port you're listening on.
 	/// </summary>
@@ -288,11 +288,11 @@ public class UDPPacketIO
 	{
 		get
 		{
-			return localPort; 
+			return localPort;
 		}
 		set
-		{ 
-			localPort = value; 
+		{
+			localPort = value;
 		}
 	}
 }
@@ -364,28 +364,38 @@ public class UDPPacketIO
 			return 0f;
 		}
 	}
-	
+
+	public String GetString(int index) {
+
+		if (values [index].GetType() == typeof(String)) {
+			String data = (String)values [index];
+						return data;
+		} else {
+			Debug.Log("Wrong type");
+			return "WRONG TYPE";
+		}
+	}
   }
 
   public delegate void OscMessageHandler( OscMessage oscM );
 
   /// <summary>
   /// The Osc class provides the methods required to send, receive, and manipulate OSC messages.
-  /// Several of the helper methods are static since a running Osc instance is not required for 
+  /// Several of the helper methods are static since a running Osc instance is not required for
   /// their use.
-  /// 
-  /// When instanciated, the Osc class opens the PacketIO instance that's handed to it and 
-  /// begins to run a reader thread.  The instance is then ready to service Send OscMessage requests 
+  ///
+  /// When instanciated, the Osc class opens the PacketIO instance that's handed to it and
+  /// begins to run a reader thread.  The instance is then ready to service Send OscMessage requests
   /// and to start supplying OscMessages as received back.
-  /// 
+  ///
   /// The Osc class can be called to Send either individual messages or collections of messages
   /// in an Osc Bundle.  Receiving is done by delegate.  There are two ways: either submit a method
   /// to receive all incoming messages or submit a method to handle only one particular address.
-  /// 
+  ///
   /// Messages can be encoded and decoded from Strings via the static methods on this class, or
-  /// can be hand assembled / disassembled since they're just a string (the address) and a list 
-  /// of other parameters in Object form. 
-  /// 
+  /// can be hand assembled / disassembled since they're just a string (the address) and a list
+  /// of other parameters in Object form.
+  ///
   /// </summary>
   public class OSC : MonoBehaviour
   {
@@ -411,16 +421,16 @@ public class UDPPacketIO
 
 
 #if UNITY_EDITOR
-    
+
     private void HandleOnPlayModeChanged(UnityEditor.PlayModeStateChange state) //FIX FOR UNITY POST 2017
     {
 		// This method is run whenever the playmode state is changed.
-		
-		
+
+
 			paused = UnityEditor.EditorApplication.isPaused;
 			//print ("editor paused "+paused);
 			// do stuff when the editor is paused.
-		
+
 	}
 #endif
 
@@ -439,7 +449,7 @@ public class UDPPacketIO
 
 		ReadThread = new Thread(Read);
 		ReaderRunning = true;
-		ReadThread.IsBackground = true;      
+		ReadThread.IsBackground = true;
 		ReadThread.Start();
 
 #if UNITY_EDITOR
@@ -455,11 +465,11 @@ public class UDPPacketIO
 
 	/// <summary>
 	/// Set the method to call back on when a message with the specified
-	/// address is received.  The method needs to have the OscMessageHandler signature - i.e. 
+	/// address is received.  The method needs to have the OscMessageHandler signature - i.e.
 	/// void amh( OscMessage oscM )
 	/// </summary>
-	/// <param name="key">Address string to be matched</param>   
-	/// <param name="ah">The method to call back on.</param>   
+	/// <param name="key">Address string to be matched</param>
+	/// <param name="ah">The method to call back on.</param>
 	public void SetAddressHandler(string key, OscMessageHandler ah)
 
 	{
@@ -518,14 +528,14 @@ public class UDPPacketIO
 	}
 
 
-	
+
     /// <summary>
     /// Make sure the PacketExchange is closed.
     /// </summary>
-	/// 
+	///
 	/*
 	~OSC()
-    {           
+    {
     	Cancel();
         //Debug.LogError("~Osc");
     }
@@ -541,19 +551,19 @@ public class UDPPacketIO
             ReadThread.Abort();
 
         }
-        
+
         if (OscPacketIO != null && OscPacketIO.IsOpen())
         {
             OscPacketIO.Close();
             OscPacketIO = null;
 			print("Closed OSC listener");
         }
-       
+
     }
 
 
 	/// <summary>
-	/// Read Thread.  Loops waiting for packets.  When a packet is received, it is 
+	/// Read Thread.  Loops waiting for packets.  When a packet is received, it is
 	/// dispatched to any waiting All Message Handler.  Also, the address is looked up and
 	/// any matching handler is called.
 	/// </summary>
@@ -584,7 +594,7 @@ public class UDPPacketIO
 					Thread.Sleep(5);
 			}
 		}
-		
+
 		catch (Exception e)
 		{
 			Debug.Log("ThreadAbortException"+e);
@@ -593,17 +603,17 @@ public class UDPPacketIO
 		{
 
 		}
-		
+
 	}
 
 
-  
+
 
     /// <summary>
-    /// Send an individual OSC message.  Internally takes the OscMessage object and 
+    /// Send an individual OSC message.  Internally takes the OscMessage object and
     /// serializes it into a byte[] suitable for sending to the PacketIO.
     /// </summary>
-    /// <param name="oscMessage">The OSC Message to send.</param>   
+    /// <param name="oscMessage">The OSC Message to send.</param>
     public void Send( OscMessage oscMessage )
     {
       byte[] packet = new byte[1000];
@@ -612,10 +622,10 @@ public class UDPPacketIO
     }
 
     /// <summary>
-    /// Sends a list of OSC Messages.  Internally takes the OscMessage objects and 
+    /// Sends a list of OSC Messages.  Internally takes the OscMessage objects and
     /// serializes them into a byte[] suitable for sending to the PacketExchange.
     /// </summary>
-    /// <param name="oms">The OSC Message to send.</param>   
+    /// <param name="oms">The OSC Message to send.</param>
     public void Send(ArrayList oms)
     {
       byte[] packet = new byte[1000];
@@ -627,18 +637,18 @@ public class UDPPacketIO
     /// Set the method to call back on when any message is received.
     /// The method needs to have the OscMessageHandler signature - i.e. void amh( OscMessage oscM )
     /// </summary>
-    /// <param name="amh">The method to call back on.</param>   
+    /// <param name="amh">The method to call back on.</param>
     public void SetAllMessageHandler(OscMessageHandler amh)
     {
       AllMessageHandler = amh;
     }
 
- 
 
-    
+
+
 
     /// <summary>
-    /// Creates an OscMessage from a string - extracts the address and determines each of the values. 
+    /// Creates an OscMessage from a string - extracts the address and determines each of the values.
     /// </summary>
     /// <param name="message">The string to be turned into an OscMessage</param>
     /// <returns>The OscMessage.</returns>
@@ -869,9 +879,9 @@ public class UDPPacketIO
             while ( index < length )
             {
               int messageSize = ( packet[index++] << 24 ) + ( packet[index++] << 16 ) + ( packet[index++] << 8 ) + packet[index++];
-              /*int newIndex = */ExtractMessages( messages, packet, index, length ); 
+              /*int newIndex = */ExtractMessages( messages, packet, index, length );
               index += messageSize;
-            }            
+            }
           }
           break;
       }

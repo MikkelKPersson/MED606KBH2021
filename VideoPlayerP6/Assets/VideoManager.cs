@@ -14,7 +14,7 @@ public class VideoManager : MonoBehaviour
 
       // VideoPlayer automatically targets the camera backplane when it is added
       // to a camera object, no need to change videoPlayer.targetCamera.
-      var videoPlayer = camera.AddComponent<UnityEngine.Video.VideoPlayer>();
+      var videoPlayer = camera.GetComponent<UnityEngine.Video.VideoPlayer>();
 
       // By default, VideoPlayers added to a camera will use the far plane.
       // Let's target the near plane instead.
