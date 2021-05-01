@@ -67,6 +67,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: _ConreteFloorMat
+    second: {fileID: 2100000, guid: eff064ffefc6e9841b7c2c98fa8edca3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: _DirtMat
     second: {fileID: 2100000, guid: 4ce8eb95a7cca464d894b522fc7e0aea, type: 2}
   - first:
@@ -74,6 +79,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: _DoorMat
     second: {fileID: 2100000, guid: 11d80699100414246b2b11ccf5327888, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _MetalWallMat
+    second: {fileID: 2100000, guid: e044d335448477f4caa77b5c65fd2a81, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
