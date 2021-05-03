@@ -14,7 +14,7 @@ public class Logger : MonoBehaviour
     void Start()
     {
       // LogFile = new StreamWriter("TestLog.csv", true);
-      WriteLog("UnityTime,NodeJSTime,Attention,Meditation,PoorSignalLevel,Frame,Delta,Theta,LowAlpha,HighAlpha,LowBeta,HighBeta,LowGamma,HighGamma");
+      WriteLog("UnityTime,NodeJSTime,Attention,Meditation,PoorSignalLevel,Frame,Delta,Theta,LowAlpha,HighAlpha,LowBeta,HighBeta,LowGamma,HighGamma,Time");
       oscReference.SetAddressHandler( "/mynddata" , OnReceive );
       GameObject camera = GameObject.Find("Main Camera");
       videoPlayer = camera.GetComponent<UnityEngine.Video.VideoPlayer>();
@@ -29,8 +29,8 @@ public class Logger : MonoBehaviour
       var unityTime = DateTime.UtcNow.ToString("HH:mm:ss:ms");
       print("unityTime" + unityTime);
       // float data = message.GetString(0);
-      WriteLog(message.GetString(0)  + "," + unityTime + ", "+ message.GetFloat(1) + "," + message.GetFloat(2) +  "," + message.GetFloat(3) + "," + videoPlayer.frame + "," + message.GetFloat(4) + "," + message.GetFloat(5) + "," + message.GetFloat(6) + "," + message.GetFloat(7) + "," + message.GetFloat(8) + "," + message.GetFloat(9) + "," + message.GetFloat(10) + "," + message.GetFloat(11));
-      print(message.GetString(0)  + "," + unityTime + ", "+ message.GetFloat(1) + "," + message.GetFloat(2) +  "," + message.GetFloat(3) + "," + videoPlayer.frame + "," + message.GetFloat(4) + "," + message.GetFloat(5) + "," + message.GetFloat(6) + "," + message.GetFloat(7) + "," + message.GetFloat(8) + "," + message.GetFloat(9) + "," + message.GetFloat(10) + "," + message.GetFloat(11));
+      WriteLog(message.GetString(0)  + "," + unityTime + ", "+ message.GetFloat(1) + "," + message.GetFloat(2) +  "," + message.GetFloat(3) + "," + videoPlayer.frame + "," + message.GetFloat(4) + "," + message.GetFloat(5) + "," + message.GetFloat(6) + "," + message.GetFloat(7) + "," + message.GetFloat(8) + "," + message.GetFloat(9) + "," + message.GetFloat(10) + "," + message.GetFloat(11) + "," + videoPlayer.time );
+      print(message.GetString(0)  + "," + unityTime + ", "+ message.GetFloat(1) + "," + message.GetFloat(2) +  "," + message.GetFloat(3) + "," + videoPlayer.frame + "," + message.GetFloat(4) + "," + message.GetFloat(5) + "," + message.GetFloat(6) + "," + message.GetFloat(7) + "," + message.GetFloat(8) + "," + message.GetFloat(9) + "," + message.GetFloat(10) + "," + message.GetFloat(11) + "," + videoPlayer.time );
 
     }
     public void WriteLog(string message)

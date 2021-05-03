@@ -20,7 +20,7 @@ public class VideoManager : MonoBehaviour
       // Let's target the near plane instead.
       videoPlayer.renderMode = UnityEngine.Video.VideoRenderMode.CameraNearPlane;
 
-      videoPlayer.url = "Assets/udeiskoven.mp4";
+      videoPlayer.url = "Assets/rt2.m4v";
 
       videoPlayer.loopPointReached += EndReached;
       videoPlayer.started += Started;
@@ -35,8 +35,8 @@ public class VideoManager : MonoBehaviour
     void EndReached(UnityEngine.Video.VideoPlayer vp)
    {
      print("ENDREACHED YASSS");
-       vp.url = "Assets/COWS.mp4";
-       vp.Play();
+      // vp.url = "Assets/COWS.mp4";
+      // vp.Play();
    }
 
    void Started(UnityEngine.Video.VideoPlayer vp){
