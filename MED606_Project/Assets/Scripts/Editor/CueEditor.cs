@@ -128,9 +128,10 @@ namespace IA
                 {
                     // PUT CODE HERE - GROUP 606
 
-                    if (cueNames[currentCue] == "red")
+                    if (cueNames[currentCue] == "red") {
                         Debug.Log("red cue pressed");
-
+                        GameObject.Find("LightmapSwitcher").GetComponent<LevelLightmapData>().LoadLightingScenario(0);
+                    }
                     /* if (currentCue == 0){
                         GameObject.Find("light").GetComponent<Animator>().SetBool("on", true);
                     } else if (currentCue == 1){

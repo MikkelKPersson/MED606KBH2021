@@ -4,7 +4,19 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/01Scene/MainScene.unity
+    guid: f040f3085e499e14c966fa9cdd6db23d
+  - enabled: 1
+    path: Assets/01Scene/MainScene_lighting_Dark.unity
+    guid: 8acff5f15fefbc647a8b984002d63d94
+  - enabled: 1
+    path: Assets/01Scene/MainScene_lighting_Normal.unity
+    guid: cf9f188d35ee9224e949290e70d36acb
+  - enabled: 1
+    path: Assets/01Scene/MainScene_lighting_Red.unity
+    guid: 58f0cda6c19c84b48bf124ea37317fb8
   m_configObjects:
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 612f1c1f524c3de4980a4089d9506e0c, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 2a225f58c798d0d4b8702c74cc33d5b2, type: 2}
