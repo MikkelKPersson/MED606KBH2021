@@ -52,6 +52,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: _BoxMetal
+    second: {fileID: 2100000, guid: cc7148dea40e4d6488185f5a69c35e8d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _BoxWhite
+    second: {fileID: 2100000, guid: bd90f9b28f9d84a41b8eee78d582e498, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: _CageCeilingBrushedMetalMat
     second: {fileID: 2100000, guid: 87519852f17f1ea4c8318966858a9c81, type: 2}
   - first:
@@ -84,6 +94,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: _MetalWallMat
     second: {fileID: 2100000, guid: e044d335448477f4caa77b5c65fd2a81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _Screw8
+    second: {fileID: 2100000, guid: 9add4e26de716934d8546e09f29b3cfd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _Tube12
+    second: {fileID: 2100000, guid: c0f57b0b51d209c4bbcb3cc66c11bd44, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
