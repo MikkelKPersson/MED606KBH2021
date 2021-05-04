@@ -9,16 +9,20 @@ namespace IA
     [System.Serializable]
     public class CueStack
     {
-        [SerializeField]
+        // [SerializeField]
         public List<Cue> stack;
         public CueStack()
         {
             stack = new List<Cue>();
+            Debug.Log("added");
+            Debug.Log(stack.Count);
+
         }
         public CueStack(Cue cue)
         {
             stack = new List<Cue>();
             stack.Add(cue);
+      
         }
         public void AddCue(Cue cue)
         {
@@ -36,6 +40,7 @@ namespace IA
         public void ClearStack()
         {
             stack = new List<Cue>();
+            Debug.Log(stack);
         }
     }
      [System.Serializable]

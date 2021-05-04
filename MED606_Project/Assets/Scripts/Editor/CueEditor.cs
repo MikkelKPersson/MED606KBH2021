@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
@@ -128,9 +128,18 @@ namespace IA
                 {
                     // PUT CODE HERE - GROUP 606
 
-                    if (cueNames[currentCue] == "red") {
-                        Debug.Log("red cue pressed");
+                    if (cueNames[currentCue] == "normal") {
+                        // Debug.Log("red cue pressed");
                         GameObject.Find("LightmapSwitcher").GetComponent<LevelLightmapData>().LoadLightingScenario(0);
+                    }
+
+                    if (cueNames[currentCue] == "red") {
+                        // Debug.Log("red cue pressed");
+                        GameObject.Find("LightmapSwitcher").GetComponent<LevelLightmapData>().LoadLightingScenario(2);
+                    }
+                      if (cueNames[currentCue] == "black") {
+                        // Debug.Log("black cue pressed");
+                        GameObject.Find("LightmapSwitcher").GetComponent<LevelLightmapData>().LoadLightingScenario(1);
                     }
                     /* if (currentCue == 0){
                         GameObject.Find("light").GetComponent<Animator>().SetBool("on", true);
