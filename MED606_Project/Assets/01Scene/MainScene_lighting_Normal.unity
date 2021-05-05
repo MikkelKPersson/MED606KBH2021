@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 129.74515, g: 160.87138, b: 212.69302, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -264,8 +264,8 @@ MonoBehaviour:
       fadeDistance: 10000
       rangeCompressionFactor: 1
     influence:
-      m_EditorAdvancedModeBlendDistancePositive: {x: 0.2259655, y: 1, z: 0.6943158}
-      m_EditorAdvancedModeBlendDistanceNegative: {x: 0.4363041, y: 1, z: 0.45338547}
+      m_EditorAdvancedModeBlendDistancePositive: {x: 0.2259655, y: 1, z: 0.87735945}
+      m_EditorAdvancedModeBlendDistanceNegative: {x: 0.4363041, y: 1, z: 0.4533853}
       m_EditorSimplifiedModeBlendDistance: 0.6252463
       m_EditorAdvancedModeBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_EditorAdvancedModeBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
@@ -278,8 +278,8 @@ MonoBehaviour:
       m_ObsoleteOffset: {x: 0, y: 0, z: 0}
       m_Shape: 0
       m_BoxSize: {x: 5.505142, y: 5.0508633, z: 5.279993}
-      m_BoxBlendDistancePositive: {x: 0.2259655, y: 1, z: 0.6943158}
-      m_BoxBlendDistanceNegative: {x: 0.4363041, y: 1, z: 0.45338547}
+      m_BoxBlendDistancePositive: {x: 0.2259655, y: 1, z: 0.87735945}
+      m_BoxBlendDistanceNegative: {x: 0.4363041, y: 1, z: 0.4533853}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -296,7 +296,7 @@ MonoBehaviour:
       m_SphereRadius: 1
     proxySettings:
       useInfluenceVolumeAsProxyVolume: 0
-      capturePositionProxySpace: {x: 0, y: 0, z: 0}
+      capturePositionProxySpace: {x: 0, y: 0, z: -0.616032}
       captureRotationProxySpace: {x: 0, y: 0, z: 0, w: 1}
       mirrorPositionProxySpace: {x: 0, y: 0, z: 0}
       mirrorRotationProxySpace: {x: 0, y: 0, z: 0, w: 0}
@@ -878,7 +878,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1133777169
 GameObject:
@@ -1034,7 +1034,7 @@ MonoBehaviour:
       m_ObsoleteSphereBaseOffset: {x: 0, y: 0, z: 0}
       m_ObsoleteOffset: {x: 0, y: 0, z: 0}
       m_Shape: 0
-      m_BoxSize: {x: 7.001626, y: 4.655611, z: 7.2353845}
+      m_BoxSize: {x: 7.001626, y: 4.655611, z: 6.8351126}
       m_BoxBlendDistancePositive: {x: 0.6482477, y: 1, z: 0.5426984}
       m_BoxBlendDistanceNegative: {x: 1, y: 1, z: 1.178185}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
@@ -1284,7 +1284,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 7.001626, y: 4.655611, z: 7.2353845}
+  m_BoxSize: {x: 7.001626, y: 4.655611, z: 6.8351126}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -1310,12 +1310,85 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1133777169}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.387957, y: 2.7437859, z: 4.775565}
+  m_LocalPosition: {x: -8.387957, y: 2.7437859, z: 4.9757013}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 587303156}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1254442899
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: e3be748f31977d04da6c98f998519006, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e3be748f31977d04da6c98f998519006, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.7509308
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e3be748f31977d04da6c98f998519006, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.375
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e3be748f31977d04da6c98f998519006, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.583522
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e3be748f31977d04da6c98f998519006, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e3be748f31977d04da6c98f998519006, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e3be748f31977d04da6c98f998519006, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e3be748f31977d04da6c98f998519006, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e3be748f31977d04da6c98f998519006, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e3be748f31977d04da6c98f998519006, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e3be748f31977d04da6c98f998519006, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8256134651489076907, guid: e3be748f31977d04da6c98f998519006, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: -3644290782289665192, guid: e3be748f31977d04da6c98f998519006, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e3be748f31977d04da6c98f998519006, type: 3}
+      propertyPath: m_Name
+      value: Card_reader_light
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e3be748f31977d04da6c98f998519006, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5979446549855156498, guid: e3be748f31977d04da6c98f998519006, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e3be748f31977d04da6c98f998519006, type: 3}
 --- !u!1 &1384389891
 GameObject:
   m_ObjectHideFlags: 0

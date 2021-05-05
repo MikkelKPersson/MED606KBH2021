@@ -92,6 +92,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: _GlassBlack
+    second: {fileID: 2100000, guid: 4aeea93ce3ed93941abbea7360e42bc8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: _MetalWallMat
     second: {fileID: 2100000, guid: e044d335448477f4caa77b5c65fd2a81, type: 2}
   - first:
