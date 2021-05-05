@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using System.Linq;
 using Newtonsoft.Json;
 
+
 namespace IA
 {
     [ExecuteAlways]
@@ -130,16 +131,21 @@ namespace IA
 
                     if (cueNames[currentCue] == "normal") {
                         // Debug.Log("red cue pressed");
-                        GameObject.Find("LightmapSwitcher").GetComponent<LevelLightmapData>().LoadLightingScenario(0);
+                        GameObject.Find("LightmapSwitcher").GetComponent<PixelWizards.LightmapSwitcher.LevelLightmapData>().LoadLightingScenario(0);
+                        GameObject.Find("Security_Cam").GetComponent<Animator>().SetBool("On", true);
+                        GameObject.Find("Security_Cam (1)").GetComponent<Animator>().SetBool("On", true);
                     }
 
                     if (cueNames[currentCue] == "red") {
                         // Debug.Log("red cue pressed");
-                        GameObject.Find("LightmapSwitcher").GetComponent<LevelLightmapData>().LoadLightingScenario(2);
+                        Debug.Log(GameObject.Find("LightmapSwitcher"));
+                        GameObject.Find("LightmapSwitcher").GetComponent<PixelWizards.LightmapSwitcher.LevelLightmapData>().LoadLightingScenario(2);
+                        GameObject.Find("Security_Cam").GetComponent<Animator>().SetBool("On", false);
+                        GameObject.Find("Security_Cam (1)").GetComponent<Animator>().SetBool("On", false);
                     }
                       if (cueNames[currentCue] == "black") {
                         // Debug.Log("black cue pressed");
-                        GameObject.Find("LightmapSwitcher").GetComponent<LevelLightmapData>().LoadLightingScenario(1);
+                        GameObject.Find("LightmapSwitcher").GetComponent<PixelWizards.LightmapSwitcher.LevelLightmapData>().LoadLightingScenario(1);
                     }
                     /* if (currentCue == 0){
                         GameObject.Find("light").GetComponent<Animator>().SetBool("on", true);
