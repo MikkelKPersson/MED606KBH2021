@@ -34,7 +34,7 @@ public class VideoManager : MonoBehaviour
 
     void EndReached(UnityEngine.Video.VideoPlayer vp)
    {
-     print("ENDREACHED YASSS");
+    // print("ENDREACHED YASSS");
       // vp.url = "Assets/COWS.mp4";
       // vp.Play();
    }

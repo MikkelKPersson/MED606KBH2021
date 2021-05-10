@@ -27,10 +27,12 @@ public class Logger : MonoBehaviour
     }
     void OnReceive(OscMessage message) {
       var unityTime = DateTime.UtcNow.ToString("HH:mm:ss:ms");
-      print("unityTime" + unityTime);
+     // print("unityTime" + unityTime);
+      var vidTime = videoPlayer.time.ToString();
+      vidTime = vidTime.Replace(",", ".");
       // float data = message.GetString(0);
-      WriteLog(message.GetString(0)  + "," + unityTime + ", "+ message.GetFloat(1) + "," + message.GetFloat(2) +  "," + message.GetFloat(3) + "," + videoPlayer.frame + "," + message.GetFloat(4) + "," + message.GetFloat(5) + "," + message.GetFloat(6) + "," + message.GetFloat(7) + "," + message.GetFloat(8) + "," + message.GetFloat(9) + "," + message.GetFloat(10) + "," + message.GetFloat(11) + "," + videoPlayer.time );
-      print(message.GetString(0)  + "," + unityTime + ", "+ message.GetFloat(1) + "," + message.GetFloat(2) +  "," + message.GetFloat(3) + "," + videoPlayer.frame + "," + message.GetFloat(4) + "," + message.GetFloat(5) + "," + message.GetFloat(6) + "," + message.GetFloat(7) + "," + message.GetFloat(8) + "," + message.GetFloat(9) + "," + message.GetFloat(10) + "," + message.GetFloat(11) + "," + videoPlayer.time );
+      WriteLog(message.GetString(0)  + "," + unityTime + ", "+ message.GetFloat(1) + "," + message.GetFloat(2) +  "," + message.GetFloat(3) + "," + videoPlayer.frame + "," + message.GetFloat(4) + "," + message.GetFloat(5) + "," + message.GetFloat(6) + "," + message.GetFloat(7) + "," + message.GetFloat(8) + "," + message.GetFloat(9) + "," + message.GetFloat(10) + "," + message.GetFloat(11) + "," + vidTime);
+     // print(message.GetString(0)  + "," + unityTime + ", "+ message.GetFloat(1) + "," + message.GetFloat(2) +  "," + message.GetFloat(3) + "," + videoPlayer.frame + "," + message.GetFloat(4) + "," + message.GetFloat(5) + "," + message.GetFloat(6) + "," + message.GetFloat(7) + "," + message.GetFloat(8) + "," + message.GetFloat(9) + "," + message.GetFloat(10) + "," + message.GetFloat(11) + "," + vidTime );
 
     }
     public void WriteLog(string message)

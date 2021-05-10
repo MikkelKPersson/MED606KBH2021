@@ -27,11 +27,10 @@ var client = thinkgear.createClient();
 client.on('data', function(data) {
   var time = moment().format('h:mm:ss:ms');
   // time = time.toTimeString();
-  console.log(time + ': ' + JSON.stringify(data));
-  console.log("BOEH");
+  console.log(time + ': ' + "A: " + data.eSense.attention + "SIGNAL: " + data.poorSignalLevel );
+  
 
   var message = new Message('/mynddata');
-  console.log("huh");
 
   message.append(time);
   message.append(data.eSense.attention);
@@ -46,7 +45,7 @@ client.on('data', function(data) {
   message.append(data.eegPower.lowGamma);
   message.append(data.eegPower.highGamma);
   sendMess(message);
-  console.log("END");
+  //console.log("END");
 });
 
 client.connect();
