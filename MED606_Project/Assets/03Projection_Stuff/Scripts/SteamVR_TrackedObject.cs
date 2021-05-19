@@ -14,6 +14,15 @@ namespace Valve.VR
 
     public class SteamVR_TrackedObject : MonoBehaviour
     {
+
+        public int smoothNum = 5;
+        [SerializeField]
+        Vector3[] prevPositions;
+        int posIndex = 0;
+        void Start()
+        {
+            prevPositions = new Vector3[smoothNum];
+        }
         public enum EIndex
         {
             None = -1,
@@ -41,8 +50,16 @@ namespace Valve.VR
         [Tooltip("If not set, relative to parent")]
         public Transform origin;
 
-        public Vector3 Position;
+        public Vector3 Position_Calibrate;
+        public Vector3 Position_Offset;
         public Vector3 Rotation;
+
+        private Vector3 PositionPrev;
+        private Vector3 Positioncurrent;
+
+        private Vector3 velocity = Vector3.zero;
+
+        public float smoothTime = 0.3F;
 
         public bool isValid { get; private set; }
 
@@ -67,14 +84,30 @@ namespace Valve.VR
 
             var pose = new SteamVR_Utils.RigidTransform(poses[i].mDeviceToAbsoluteTracking);
 
+            prevPositions[posIndex] = pose.pos;
+            posIndex = posIndex+1 < prevPositions.Length ? posIndex+1 : 0;
+            Vector3 posAccum = new Vector3();
+            foreach (Vector3 pos in prevPositions)
+            {
+                posAccum += pos;
+            }
+            Vector3 smoothPos = posAccum/smoothNum;
+
             if (origin != null)
             {
+                
+
+                //transform.position = Vector3.SmoothDamp(PositionPrev, transform.position, ref velocity, smoothTime);
 
 
-                transform.position = origin.transform.TransformPoint(pose.pos);
-                transform.position -= Position;
-                transform.rotation = origin.rotation * pose.rot;
-                transform.eulerAngles += Rotation;
+
+
+                transform.position = origin.transform.TransformPoint(smoothPos);
+                transform.position -= Position_Calibrate+Position_Offset;
+
+                //transform.rotation = origin.rotation * pose.rot;
+                //transform.eulerAngles += Rotation;
+                
 
 
 
@@ -82,13 +115,17 @@ namespace Valve.VR
             else
             {
 
+                
+                transform.localPosition = smoothPos;
+                transform.position -= Position_Calibrate+Position_Offset;
 
-                transform.localPosition = pose.pos;
-                transform.position -= Position;
-                transform.localRotation = pose.rot;
-                transform.eulerAngles += Rotation;
+                //transform.localRotation = pose.rot;
+                //transform.eulerAngles += Rotation;
+                
 
             }
+
+            //PositionPrev = transform.position;
         }
 
 
