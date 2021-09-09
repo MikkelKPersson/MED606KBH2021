@@ -747,6 +747,10 @@ PrefabInstance:
       value: Static_light_Components
       objectReference: {fileID: 0}
     - target: {fileID: 4118261826481527882, guid: 09f27d61793483042a77501c4a41ee20, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4118261826481527882, guid: 09f27d61793483042a77501c4a41ee20, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
